@@ -59,6 +59,15 @@ describe('Cinema', function () {
     const actual = cinema.lengthChecker(100)
     assert.deepStrictEqual(actual, [moonlight, bladeRunner, blackPanther, trainspotting])
   })
-  it('should be able to calculate total running time of all films')
+  it('should be able to calculate total running time of all films', function () {
+    const actual = cinema.totalLengthOfFilms()
+    assert.deepStrictEqual(actual, 622)
+  })
+
+  it('should be able to filter films by year or genre', function () {
+    const actual = cinema.filmsByProperty('year', 2017)
+    assert.deepStrictEqual(actual, [bladeRunner, dunkirk, trainspotting])
+
+  })
 
 })

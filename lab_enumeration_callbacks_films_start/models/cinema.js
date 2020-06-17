@@ -37,13 +37,25 @@ Cinema.prototype.lengthChecker = function(minutes){
   return filmsOverLength
 }
 
+Cinema.prototype.totalLengthOfFilms = function () {
+  let totalLength = 0;
 
+  this.films.forEach((film) => {
+    totalLength += film.length
+  })
+
+  return totalLength
+}
 
   // const titles = this.films.map((film)=>{
   //   return film.title
   // })
 
   // return titles
+Cinema.prototype.filmsByProperty = function(propertyName, value){
+  const matchingFilms = this.films.filter((film) => {return film[propertyName] === value})
+  return matchingFilms
+}
 
 
 module.exports = Cinema;
